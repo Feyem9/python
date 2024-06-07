@@ -1,0 +1,44 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+    <h1> {% block title%} login page {% endblock %} </h1>
+    <h1>login  form</h1>
+    <div class="">
+        <form action="/auth/login-post" method="post">
+            <div class="mb-3">
+                <label for="" class="form-label">Email</label>
+                <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id=""
+                    aria-describedby="emailHelpId"
+                    placeholder="abc@mail.com"
+                />
+
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id=""
+                    placeholder=""
+                />
+            </div>
+            
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                Login
+            </button>
+            
+            
+        </form>
+    </div>
+    
+{% endblock %}

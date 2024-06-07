@@ -1,0 +1,14 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<h1> {% block title%} home page {% endblock %} </h1>
+<h1>welcome page</h1>
+<div class="">
+    <a href="/auth/login" class="button me-3"><button
+            class="bg bg-primary rounded border border-primary text-light">login</button></a>
+    <a href="/auth/register" class="button ms-3"><button
+            class="bg bg-primary rounded border border-primary text-light">register</button></a>
+</div>
+
+{% endblock %}

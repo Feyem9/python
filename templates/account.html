@@ -1,0 +1,36 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="d-flex justify-content-center  text text-center">
+            <h1 class="text text-center mb-5"> {% block title%} Account  page {% endblock %} </h1>
+            <h1 class="text text-center mb-5 mt-5">welcome back</h1>
+        </div>
+    </div>
+</div><br><br><br>
+    
+    <a href="/article" class="mt-5">
+        <button
+        type="submit"
+        class="btn btn-primary"
+    >
+        click here to view the article tables
+    </button>
+    </a><br><br><br>
+    
+
+    <div class="mt-5">
+        <form action="/auth/logout" method="post">
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                Logout
+            </button>
+            
+        </form>
+    </div>
+    
+{% endblock %}

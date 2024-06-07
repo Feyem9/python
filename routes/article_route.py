@@ -4,7 +4,7 @@ from controllers.article_controller import index , add_post , create , view , up
 
 article = Blueprint('article' , __name__)
 
-article.route('/' , methods=['GET'] , strict_slashes=False)(index)
+article.route('/article' , methods=['GET'] , strict_slashes=False)(index)
 article.route('/add_post' , methods=['GET'] , strict_slashes=False)(add_post)
 article.route('/create' , methods=['POST'] , strict_slashes=False)(create)
 article.route('/view/<article_id>' , methods=['GET'] , strict_slashes=False)(view)

@@ -1,0 +1,83 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+    <h1> {% block title%} register page {% endblock %} </h1>
+    <h1>register  form</h1>
+    <div class="">
+        <form action="/auth/register-post" method="post">
+            <div class="mb-3">
+                <label for="" class="form-label">name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id=""
+                    aria-describedby=""
+                    placeholder="name"
+                    required
+                />
+
+                <div class="mb-3">
+                    <label for="" class="form-label">username</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="username"
+                        id=""
+                        aria-describedby=""
+                        placeholder="username"
+                        required
+                    />
+                    
+            </div>
+            
+            <div class="mb-3">
+                <label for="" class="form-label">Email</label>
+                <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id=""
+                    aria-describedby="emailHelpId"
+                    placeholder="abc@mail.com"
+                    required
+                />
+
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id=""
+                    placeholder=""
+                    required
+                />
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">confirm_Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    name="confirm_Password"
+                    id=""
+                    placeholder="confirm_Password"
+                    required
+                />
+            </div>
+            
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                Register
+            </button>
+            
+            
+        </form>
+    </div>
+    
+{% endblock %}

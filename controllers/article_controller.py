@@ -1,7 +1,5 @@
 from flask import render_template , request  , redirect# type:ignore
 from config import db
-import requests
-from requests.auth import HTTPBasicAuth
 from models.article_model import Article
 from models.user_model import Users 
 
@@ -28,19 +26,19 @@ def create():
     db.session.add(article)
     db.session.commit()
 
-    return redirect('/')
+    return redirect('/article')
 
 def view(article_id):
     article = Article.query.filter_by(id=article_id).first()
     if article is None:
-        return redirect('/')
+        return redirect('/article')
     return render_template('view.html' , article=article)
 
 
 def update(article_id):
     article = Article.query.filter_by(id=article_id).first()
     if article is None:
-        return redirect('/')
+        return redirect('/article')
     if request.method == "GET":
       return render_template('update.html' , article=article , title="UPDATE POST")
     elif request.method == "POST":
@@ -52,7 +50,7 @@ def update(article_id):
         article.author = author
         article.description = description
         db.session.commit()
-        return redirect('/')
+        return redirect('/article')
     return render_template('update.html' , article=article , title="updated succesfully")
 
 def delete(article_id):
@@ -61,6 +59,6 @@ def delete(article_id):
             articles = Article.query.get(article_id)
             db.session.delete(articles)
             db.session.commit()
-            return redirect('/')   
+            return redirect('/article')   
 
 
